@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Kiddy App by Tudor Boca</title>
+    <meta name="viewport" content="width=default-width; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="myJS.js"></script>
+<script type="text/javascript">
+        app.initialize();
+    </script>
+</head>
+<body>
+<div data-role="header">
+    <h1>KiddyApp</h1>
+</div>
+<div id="form">
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+    <input id="txName" type="text" placeholder="Insert Your Name " required>
+    <input id="txActivity" type="text" placeholder="Insert Activity Here" required>
+    Date:
+    <input id="dateid" type="date"  placeholder="Date" required><br>
+    <input id="txlocation" type="text"  placeholder="Add the location of the activity" ><br>
+    Time:
+    <input id="timeid" type="time" placeholder="Time"><br>
+    <input type="submit" value="Add Activity" onClick="AddValueToDB()">
+    <input type="button" value="List All Activities" onClick="ListDBValues()"> <br>
+    </form>
+    <br>
+    <div id="searchdiv">
+        <input id="txtsearch" type="text" placeholder="Search for activity or other fields " required>
+        <input type="submit" value="Search Activity" onClick="SearchActivity()">
+    </div>
+</div>
+    <br/>
+    <span style="font-weight:bold;">List of past activities:</span>
+    <span id="lbUsers"></span>
+    <br>
+    <br>
+    <input id="deleteactivitybtn" type="submit" value="Delete All Activities" onClick="DeleteDBValues()"> <br>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="addreport.html" data-role="button" onclick="beepSound()">Add Report/Search Activity</a></li>
+                <li><a href="camera.html" data-role="button" onclick="vibrateMe()">Take Photo</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
